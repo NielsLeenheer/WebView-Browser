@@ -17,7 +17,7 @@ import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import com.webviewbrowser.R;
+import com.html5test.webview.R;
 
 
 public class MainActivity extends Activity {

@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:versionCode="6"
   android:versionName="1.2"
-  package="com.webviewbrowser">
+  package="com.html5test.webview">
 
   <uses-sdk
     android:minSdkVersion="16"
