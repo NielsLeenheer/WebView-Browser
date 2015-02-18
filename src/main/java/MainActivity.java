@@ -23,7 +23,7 @@ import com.webviewbrowser.R;
 public class MainActivity extends Activity {
   private long pageStartTime = 0;
   private WebView wv;
-  private ImageButton newActivityBtn;
+  private ImageButton goBtn;
   private EditText et;
 
 
@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
     wv = (WebView) findViewById(R.id.wv);
-    newActivityBtn = (ImageButton) findViewById(R.id.new_activity);
+    goBtn = (ImageButton) findViewById(R.id.go);
     et = (EditText) findViewById(R.id.et);
 
     // setup edit text
@@ -66,20 +66,21 @@ public class MainActivity extends Activity {
     handleLoadUrl();
 
     // setup events
-    newActivityBtn.setOnTouchListener(new View.OnTouchListener() {
+    goBtn.setOnTouchListener(new View.OnTouchListener() {
       @Override
       public boolean onTouch(View v, MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-          newActivityBtn.setColorFilter(getResources().getColor(android.R.color.holo_blue_dark));
+          goBtn.setColorFilter(getResources().getColor(android.R.color.holo_blue_dark));
           return false;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
-          newActivityBtn.setColorFilter(null);
+          goBtn.setColorFilter(null);
           return false;
         }
         return false;
       }
     });
-    newActivityBtn.setOnClickListener(new View.OnClickListener() {
+
+    goBtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
