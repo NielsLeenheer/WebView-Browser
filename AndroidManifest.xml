@@ -6,8 +6,8 @@
   package="com.html5test.webview">
 
   <uses-sdk
-    android:minSdkVersion="16"
-    android:targetSdkVersion="19"/>
+    android:minSdkVersion="15"
+    android:targetSdkVersion="21"/>
 
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>

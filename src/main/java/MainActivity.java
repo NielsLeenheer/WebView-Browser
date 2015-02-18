@@ -55,6 +55,10 @@ public class MainActivity extends Activity {
     settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
     settings.setAppCacheEnabled(false);
     settings.setDomStorageEnabled(true);
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+      settings.setAllowUniversalAccessFromFileURLs(true);
+    }
+
     wv.setWebViewClient(new WebViewClient() {
       @Override
       public void onPageStarted(WebView view, String url, Bitmap favicon) {
