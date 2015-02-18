@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
       WebView.setWebContentsDebuggingEnabled(true);
     }
     wv.setWebChromeClient(new WebChromeClient());
-    wv.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
     WebSettings settings = wv.getSettings();
     settings.setJavaScriptEnabled(true);
     settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
