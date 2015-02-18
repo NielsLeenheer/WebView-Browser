@@ -25,7 +25,7 @@
     android:id="@+id/new_activity"
     android:layout_width="50dp"
     android:layout_height="50dp"
-    android:src="@drawable/plus"
+    android:src="@drawable/forward"
     android:background="@android:color/transparent"
     android:scaleType="centerInside"
     android:padding="34px"
