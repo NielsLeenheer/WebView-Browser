@@ -50,7 +50,6 @@ public class MainActivity extends Activity {
     wv.setWebChromeClient(new WebChromeClient());
     wv.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     WebSettings settings = wv.getSettings();
-    settings.setAllowUniversalAccessFromFileURLs(true);
     settings.setJavaScriptEnabled(true);
     settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
     settings.setAppCacheEnabled(false);
