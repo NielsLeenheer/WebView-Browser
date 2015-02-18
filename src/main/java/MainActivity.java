@@ -106,6 +106,9 @@ public class MainActivity extends Activity {
   }
 
   private void handleLoadUrl() {
+    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+    imm.hideSoftInputFromWindow(et.getWindowToken(), 0);
+
     String url = et.getText().toString();
     if (url.startsWith("http://")) {
     } else if (url.startsWith("https://")) {
@@ -113,8 +116,6 @@ public class MainActivity extends Activity {
       url = String.format("http://%s", url);
     }
     wv.loadUrl(url);
-    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-    imm.hideSoftInputFromWindow(et.getWindowToken(), 0);
   }
 
 }
