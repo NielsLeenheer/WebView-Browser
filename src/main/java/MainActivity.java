@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
   private WebView wv;
   private ImageButton newActivityBtn;
   private EditText et;
-  private TextView pageLoadTime;
+
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class MainActivity extends Activity {
     setContentView(R.layout.main);
     wv = (WebView) findViewById(R.id.wv);
     newActivityBtn = (ImageButton) findViewById(R.id.new_activity);
-    pageLoadTime = (TextView) findViewById(R.id.page_load_time);
     et = (EditText) findViewById(R.id.et);
 
     // setup edit text
@@ -61,19 +60,7 @@ public class MainActivity extends Activity {
       public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
         et.setText(url);
-        pageStartTime = System.currentTimeMillis();
-        pageLoadTime.setText("0ms");
-      }
-
-      @Override
-      public void onPageFinished(WebView view, String url) {
-        super.onPageFinished(view, url);
-        if (pageStartTime == 0) {
-        } else {
-          long loadTime = (System.currentTimeMillis() - pageStartTime);
-          pageLoadTime.setText(String.format("%sms", loadTime));
-          System.out.println(String.format("page load time: %sms", loadTime));
-        }
+        currentUrl = url;
       }
     });
     handleLoadUrl();

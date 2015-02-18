@@ -28,17 +28,7 @@
     android:src="@drawable/forward"
     android:background="@android:color/transparent"
     android:scaleType="centerInside"
-    android:padding="34px"
-    android:layout_alignParentRight="true"/>
-
-  <TextView
-    android:id="@+id/page_load_time"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
     android:padding="10dp"
-    android:text="0ms"
-    android:textSize="18dp"
-    android:textColor="#FF040F"/>
+    android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
