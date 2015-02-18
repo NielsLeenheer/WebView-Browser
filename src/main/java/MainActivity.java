@@ -35,15 +35,6 @@ public class MainActivity extends Activity {
     goBtn = (ImageButton) findViewById(R.id.go);
     et = (EditText) findViewById(R.id.et);
 
-    // setup edit text
-    et.setSelected(false);
-    if (getIntent().getStringExtra("url") != null) {
-      et.setText(getIntent().getStringExtra("url"));
-    } else {
-      et.setText("");
-    }
-
-    // setup wv
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
       WebView.setWebContentsDebuggingEnabled(true);
     }
@@ -63,7 +54,6 @@ public class MainActivity extends Activity {
       public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
         et.setText(url);
-        currentUrl = url;
       }
     });
 
@@ -87,9 +77,7 @@ public class MainActivity extends Activity {
     goBtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-        intent.putExtra("url", et.getText().toString());
-        startActivity(intent);
+        handleLoadUrl(true);
       }
     });
     et.setOnKeyListener(new View.OnKeyListener() {
