@@ -26,11 +26,11 @@ public class MainActivity extends Activity {
   private ImageButton goBtn;
   private EditText et;
 
-
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
+
     wv = (WebView) findViewById(R.id.wv);
     goBtn = (ImageButton) findViewById(R.id.go);
     et = (EditText) findViewById(R.id.et);
@@ -91,7 +91,7 @@ public class MainActivity extends Activity {
   });
   }
 
-  private void handleLoadUrl() {
+  private void handleLoadUrl(boolean forceReload) {
     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     imm.hideSoftInputFromWindow(et.getWindowToken(), 0);
 
@@ -101,7 +101,9 @@ public class MainActivity extends Activity {
     } else {
       url = String.format("http://%s", url);
     }
-    wv.loadUrl(url);
-  }
 
+    if (!url.equals(wv.getUrl()) || forceReload) {
+      wv.loadUrl(url);
+    }
+  }
 }
