@@ -66,7 +66,8 @@ public class MainActivity extends Activity {
         currentUrl = url;
       }
     });
-    handleLoadUrl();
+
+    wv.loadUrl("https://html5test.com");
 
     // setup events
     goBtn.setOnTouchListener(new View.OnTouchListener() {
