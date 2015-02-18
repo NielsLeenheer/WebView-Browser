@@ -80,17 +80,15 @@ public class MainActivity extends Activity {
         handleLoadUrl(true);
       }
     });
-    et.setOnKeyListener(new View.OnKeyListener() {
+
+    et.setOnFocusChangeListener(new View.OnFocusChangeListener() {
       @Override
-      public boolean onKey(View v, int keyCode, KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-          handleLoadUrl();
-          return true;
-        } else {
-          return false;
+      public void onFocusChange(View v, boolean hasFocus) {
+        if (!hasFocus) {
+          handleLoadUrl(false);
         }
       }
-    });
+  });
   }
 
   private void handleLoadUrl() {
