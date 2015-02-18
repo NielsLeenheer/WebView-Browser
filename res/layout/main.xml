@@ -21,6 +21,7 @@
     android:paddingRight="50dp"
     android:paddingLeft="16dp"
     android:singleLine="true"
+    android:selectAllOnFocus="true"
     android:imeActionLabel="Go" />
 
   <ImageButton
