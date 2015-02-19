@@ -45,6 +45,8 @@ public class MainActivity extends Activity {
     settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
     settings.setAppCacheEnabled(false);
     settings.setDomStorageEnabled(true);
+    settings.setSupportZoom(true);
+    settings.setBuiltInZoomControls(true);
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
       settings.setAllowUniversalAccessFromFileURLs(true);
     }
