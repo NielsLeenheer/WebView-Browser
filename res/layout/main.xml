@@ -22,6 +22,7 @@
     android:paddingRight="50dp"
     android:paddingLeft="16dp"
     android:singleLine="true"
+    android:inputType="textNoSuggestions"
     android:selectAllOnFocus="true"
     android:imeActionLabel="Go" />
 
