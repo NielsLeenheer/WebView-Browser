@@ -93,6 +93,15 @@ public class MainActivity extends Activity {
   });
   }
 
+  @Override
+  public void onBackPressed() {
+      if (wv.canGoBack() == true) {
+          wv.goBack();
+      } else {
+          MainActivity.super.onBackPressed();
+      }
+  }
+
   private void handleLoadUrl(boolean forceReload) {
     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     imm.hideSoftInputFromWindow(et.getWindowToken(), 0);
